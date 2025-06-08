@@ -13,7 +13,7 @@ This repository contains phase 1 JavaScript projects.
 - Enter values when prompted and check the output in the browser console
 
 ## Author
-IAN MUTHIANI
+JOSEPH MWANGI
 DEV.
 
 ## License
