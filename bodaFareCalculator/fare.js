@@ -1,32 +1,21 @@
-// Define the function
-function calculateBodaFare(distanceInKm) {
-  // Define the base fare and charge
-  const baseFare = 50;
-  const chargePerKm = 15;
+var baseFare = 50;
+var chargePerKm = 15;
+// This code calculates the fare for a boda boda ride based on the distance traveled.
+function calculateBodaFare(distance) {
+    console.log("Welcome to Boda Fare Calculator!");
+    console.log("Enter the distance in kilometers:");
 
-  // Calculate distance fare
-  const distanceFare = distanceInKm * chargePerKm;
+    distance = parseInt(prompt("Distance (in km): "), 10);
 
-  // Add the basefare to get the total fare
-  const totalFare = baseFare + distanceFare;
-
-  // Print to the console
-  console.log(`Huko kwote? Io ni ${distanceInKm} km:`);
-  console.log(`Ukikalia Pikipiki: KES ${baseFare}`);
-  console.log(`Mpaka huko: KES ${distanceFare}`);
-  console.log(`Total: KES ${totalFare}`);
-  console.log(`\nPanda Pikipiki! 🛵`);
+    // Checking if the distance is valid
+    if (distance <= 0 || isNaN(distance) || distance === null) {
+        return "Distance must be greater than zero.";
+    } else {
+        // Calculating the total fare based on the distance
+        let totalFare = baseFare + (distance * 15);
+        console.log("The total fare for " + distance + " km is: Ksh " + totalFare);
+    }
+    
 }
 
-// Ask the user for the number of kilometers
-const userInput = prompt("Unafika wapi mtu wangu? Kilometer ngapi?:");
-
-// Convert the input to a number
-const distanceInKm = Number(userInput);
-
-// Validate input and call the functionAdd commentMore actions
-if (!isNaN(distanceInKm) && distanceInKm > 0) {
-  calculateBodaFare(distanceInKm);
-} else {
-  console.log("Please input valid kilometers greater than zero.");
-}
+calculateBodaFare(0);
